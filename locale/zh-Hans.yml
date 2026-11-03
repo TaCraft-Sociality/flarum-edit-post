@@ -1,0 +1,9 @@
+tcs-edit-post:
+  forum:
+    edit_post: 编辑帖子
+    edit_post_tooltip: 编辑本帖正文
+
+  admin:
+    permissions:
+      edit_any_post_label: 编辑任意帖子
+      edit_any_post_help: 拥有该权限的用户组，可以直接在帖子操作菜单中编辑任何人的帖子。

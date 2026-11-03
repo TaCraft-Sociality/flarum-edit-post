@@ -1,0 +1,40 @@
+{
+    "name": "tcs/flarum-edit-post",
+    "description": "Adds an \"Edit post\" action to the discussion controls menu, so posts can be edited without scrolling to the bottom of a long post. A group permission allows editing any post.",
+    "type": "flarum-extension",
+    "keywords": [
+        "flarum",
+        "flarum-extension",
+        "edit",
+        "post"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tcs",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "flarum/core": "^2.0.0",
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tcs\\EditPost\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "编辑帖子按钮 Edit Post Button",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-pen-to-square",
+                "backgroundColor": "#4D698E",
+                "color": "#ffffff"
+            }
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}

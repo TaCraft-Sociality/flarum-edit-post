@@ -1,0 +1,9 @@
+tcs-edit-post:
+  forum:
+    edit_post: Edit post
+    edit_post_tooltip: Edit this post
+
+  admin:
+    permissions:
+      edit_any_post_label: Edit any post
+      edit_any_post_help: Users in these groups can edit every post (including posts written by other users) straight from the discussion's action menu.
