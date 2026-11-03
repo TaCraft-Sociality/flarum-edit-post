@@ -14,6 +14,10 @@ return [
 
     new Extend\Locales(__DIR__.'/locale'),
 
+    (new Extend\Settings())
+        ->default('tcs-edit-post.header_buttons_on_replies', false)
+        ->serializeToForum('tcsEditPostHeaderButtonsOnReplies', 'tcs-edit-post.header_buttons_on_replies', 'boolval'),
+
     (new Extend\Policy())
         ->modelPolicy(Post::class, EditAnyPostPolicy::class),
 ];

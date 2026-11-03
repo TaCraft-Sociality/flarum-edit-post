@@ -4,6 +4,10 @@ tcs-edit-post:
     edit_post_tooltip: 编辑本帖正文
 
   admin:
+    settings:
+      header_buttons_on_replies_label: 在回复楼层也显示编辑按钮
+      header_buttons_on_replies_help: 关闭时，铅笔按钮只出现在主题首帖（楼主）的头部；开启后每层回复的头部也会显示编辑按钮。
+
     permissions:
       edit_any_post_label: 编辑任意帖子
       edit_any_post_help: 拥有该权限的用户组，可以直接在帖子操作菜单中编辑任何人的帖子。

@@ -3,6 +3,12 @@ import Extend from 'flarum/common/extenders';
 
 export default [
   new Extend.Admin() //
+    .setting(() => ({
+      setting: 'tcs-edit-post.header_buttons_on_replies',
+      type: 'bool',
+      label: app.translator.trans('tcs-edit-post.admin.settings.header_buttons_on_replies_label'),
+      help: app.translator.trans('tcs-edit-post.admin.settings.header_buttons_on_replies_help'),
+    }))
     .permission(
       () => ({
         icon: 'fas fa-pen-to-square',

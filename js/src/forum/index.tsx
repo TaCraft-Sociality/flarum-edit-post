@@ -31,6 +31,20 @@ function canEdit(post: Post | false | null | undefined): post is Post {
   return !!post && !!post.id() && !post.isHidden() && !!post.canEdit();
 }
 
+/**
+ * Whether the header button should be shown on reply floors as well.
+ * Disabled by default: only the discussion's first post gets the header
+ * button, reply floors keep Flarum's native bottom "…" menu.
+ */
+function headerButtonOnReplies(): boolean {
+  return !!app.forum.attribute('tcsEditPostHeaderButtonsOnReplies');
+}
+
+/** First post of the discussion (number 1). */
+function isFirstPost(post: Post): boolean {
+  return !!post.number && post.number() === 1;
+}
+
 app.initializers.add('tcs-edit-post', () => {
   // 1. Add "编辑帖子" to the discussion action menu (the dropdown attached to
   //    the Reply split button). It edits the first post of the discussion, so
@@ -52,11 +66,16 @@ app.initializers.add('tcs-edit-post', () => {
 
   // 2. Add a compact "edit" button to the post header, so the entry point is
   //    visible as soon as the post scrolls into view (no scrolling to the
-  //    bottom of the post required).
+  //    bottom of the post required). By default this only applies to the
+  //    discussion's first post; reply floors can opt in via an admin setting.
   extend(CommentPost.prototype, 'headerItems', function (this: CommentPost, items: ItemList<Mithril.Children>) {
     const post = (this.attrs as { post?: Post }).post;
 
     if (!canEdit(post)) {
+      return;
+    }
+
+    if (!headerButtonOnReplies() && !isFirstPost(post)) {
       return;
     }
 

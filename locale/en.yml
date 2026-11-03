@@ -4,6 +4,10 @@ tcs-edit-post:
     edit_post_tooltip: Edit this post
 
   admin:
+    settings:
+      header_buttons_on_replies_label: Show the edit button on replies
+      header_buttons_on_replies_help: When disabled, the pencil button only appears in the header of the discussion's first post. Enable it to also show the button on the header of every reply.
+
     permissions:
       edit_any_post_label: Edit any post
       edit_any_post_help: Users in these groups can edit every post (including posts written by other users) straight from the discussion's action menu.
